@@ -14,9 +14,17 @@ import {
     Undo2Icon
 } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { useEditorStore } from "@/store/use-editor-store";
+import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { FontFamilyButton } from "./components/FontFamily-button";
+import { HeadingLevelButton } from "./components/Heading-level-button";
+import { TextColorButton } from "./components/Text-color-button";
+import { HighlightColorButton } from "./components/Highlight-color-button";
+import { LinkButton } from "./components/Link-button";
+import { ImageButton } from "./components/Image-button";
+import { AlignButton } from "./components/Align-button";
+import { ListButton } from "./components/List-button";
 
 interface ToolBarButtonProps {
     onClick?: () => void;
@@ -54,6 +62,7 @@ export const ToolBar = () => {
     }[][] = [
             [
                 {
+
                     label: "Undo",
                     icon: Undo2Icon,
                     onClick: () => editor?.chain().focus().undo().run()
@@ -123,23 +132,23 @@ export const ToolBar = () => {
                 <ToolBarButton key={item.label} {...item} />
             ))}
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {/*TODO : Font family */}
+            <FontFamilyButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {/*TODO : Font heading */}
+            <HeadingLevelButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             {/*TODO : Font size */}
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
             {sections[1].map((item) => (
                 <ToolBarButton key={item.label} {...item} />
             ))}
-            {/*TODO : Text color */}
-            {/*TODO : Highlight color */}
+            <TextColorButton />
+            <HighlightColorButton />
             <Separator orientation="vertical" className="h-6 bg-neutral-300" />
-            {/*TODO : Link */}
-            {/*TODO : Image */}
-            {/*TODO : Align */}
+            <LinkButton />
+            <ImageButton />
+            <AlignButton />
             {/*TODO : Line hight */}
-            {/*TODO : List */}
+            <ListButton />
             {sections[2].map((item) => (
                 <ToolBarButton key={item.label} {...item} />
             ))}
