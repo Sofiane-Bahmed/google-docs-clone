@@ -1,24 +1,12 @@
 "use client"
 
 import {
-    ChevronDownIcon,
-    Icon,
-    ListIcon,
-    ListOrderedIcon,
     MinusIcon,
     PlusIcon,
 } from "lucide-react";
 import { useState } from 'react';
 
 import { useEditorStore } from '@/store/use-editor-store'
-import { cn } from "@/lib/utils";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 export const FontSizeButton = () => {
     const { editor } = useEditorStore()
