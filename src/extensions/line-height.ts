@@ -3,8 +3,8 @@ import { Extension } from "@tiptap/react";
 declare module "@tiptap/core" {
     interface Commands<ReturnType> {
         lineHeight: {
-            setLineHeight: (lineHeght: string) => ReturnType
-            unsetLineHeight: () => ReturnType
+            setLineHeight: (lineHeight: string) => ReturnType;
+            unsetLineHeight: () => ReturnType;
         }
     }
 }
@@ -13,7 +13,7 @@ export const lineHeightExtension = Extension.create({
     name: "lineHeight",
     addOptions() {
         return {
-            types: ["paragraph", "heading"],
+            types: ["heading", "paragraph"],
             defaultLineHeight: "normal",
         }
     },
@@ -25,13 +25,13 @@ export const lineHeightExtension = Extension.create({
                     lineHeight: {
                         default: this.options.defaultLineHeight,
                         renderHTML: attributes => {
-                            if (!attributes.lineHeght) return {}
+                            if (!attributes.lineHeight) return {};
                             return {
-                                style: `line-height: ${attributes.lineHeght}`,
-                            }
+                                style: `line-height: ${attributes.lineHeight}`,
+                            };
                         },
                         parseHTML: element => {
-                            return element.style.lineHeight || this.options.defaultLineHeight
+                            return element.style.lineHeight || this.options.defaultLineHeight;
                         }
                     }
                 }
@@ -49,10 +49,10 @@ export const lineHeightExtension = Extension.create({
                         tr = tr.setNodeMarkup(pos, undefined, {
                             ...node.attrs,
                             lineHeight,
-                        })
+                        });
                     }
-                })
-                if (dispatch) dispatch(tr)
+                });
+                if (dispatch) dispatch(tr);
                 return true;
             },
             unsetLineHeight: () => ({ tr, state, dispatch }) => {
@@ -63,14 +63,13 @@ export const lineHeightExtension = Extension.create({
                     if (this.options.types.includes(node.type.name)) {
                         tr = tr.setNodeMarkup(pos, undefined, {
                             ...node.attrs,
-                            lineHeigt: this.options.defaultLineHeight
-                        })
+                            lineHeight: this.options.defaultLineHeight,
+                        });
                     }
-                })
-                if (dispatch) dispatch(tr)
+                });
+                if (dispatch) dispatch(tr);
                 return true;
             }
         }
     },
 });
-
