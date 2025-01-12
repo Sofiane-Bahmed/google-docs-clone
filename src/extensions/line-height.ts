@@ -5,7 +5,7 @@ declare module "@tiptap/core" {
         lineHeight: {
             setLineHeight: (lineHeight: string) => ReturnType;
             unsetLineHeight: () => ReturnType;
-       
+
         }
     }
 }
@@ -26,9 +26,9 @@ export const lineHeightExtension = Extension.create({
                     lineHeight: {
                         default: this.options.defaultLineHeight,
                         renderHTML: attributes => {
-                            if (!attributes.lineHeght) return {}
+                            if (!attributes.lineHeight) return {}
                             return {
-                                style: `line-height: ${attributes.lineHeght}`,
+                                style: `line-height: ${attributes.lineHeight}`,
                             }
                         },
                         parseHTML: element => {
