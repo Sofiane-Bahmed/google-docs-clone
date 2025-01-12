@@ -5,6 +5,7 @@ declare module "@tiptap/core" {
         lineHeight: {
             setLineHeight: (lineHeight: string) => ReturnType;
             unsetLineHeight: () => ReturnType;
+       
         }
     }
 }
@@ -13,7 +14,7 @@ export const lineHeightExtension = Extension.create({
     name: "lineHeight",
     addOptions() {
         return {
-            types: ["heading", "paragraph"],
+            types: ["paragraph", "heading"],
             defaultLineHeight: "normal",
         }
     },
@@ -25,10 +26,10 @@ export const lineHeightExtension = Extension.create({
                     lineHeight: {
                         default: this.options.defaultLineHeight,
                         renderHTML: attributes => {
-                            if (!attributes.lineHeight) return {};
+                            if (!attributes.lineHeght) return {}
                             return {
-                                style: `line-height: ${attributes.lineHeight}`,
-                            };
+                                style: `line-height: ${attributes.lineHeght}`,
+                            }
                         },
                         parseHTML: element => {
                             return element.style.lineHeight || this.options.defaultLineHeight;
@@ -63,8 +64,8 @@ export const lineHeightExtension = Extension.create({
                     if (this.options.types.includes(node.type.name)) {
                         tr = tr.setNodeMarkup(pos, undefined, {
                             ...node.attrs,
-                            lineHeight: this.options.defaultLineHeight,
-                        });
+                            lineHeight: this.options.defaultLineHeight
+                        })
                     }
                 });
                 if (dispatch) dispatch(tr);
