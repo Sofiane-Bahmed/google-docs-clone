@@ -26,7 +26,7 @@ import { ImageButton } from "./components/Image-button";
 import { AlignButton } from "./components/Align-button";
 import { ListButton } from "./components/List-button";
 import { FontSizeButton } from "./components/Font-size-button";
-import { LineHeightButton } from "./components/line-height-button";
+import { LineHeightButton } from "./components/Line-height-button";
 
 interface ToolBarButtonProps {
     onClick?: () => void;
@@ -129,7 +129,7 @@ export const ToolBar = () => {
             ],
         ];
     return (
-        <div className="bg-[#F1F4F9] px-2.5 py-0.5 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto">
+        <div className="bg-[#F1F4F9] px-2.5 py-0.5 mx-3 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto">
             {sections[0].map((item) => (
                 <ToolBarButton key={item.label} {...item} />
             ))}

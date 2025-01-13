@@ -3,8 +3,9 @@ import { Extension } from "@tiptap/react";
 declare module "@tiptap/core" {
     interface Commands<ReturnType> {
         lineHeight: {
-            setLineHeight: (lineHeight: string) => ReturnType
-            unsetLineHeight: () => ReturnType
+            setLineHeight: (lineHeight: string) => ReturnType;
+            unsetLineHeight: () => ReturnType;
+
         }
     }
 }
@@ -13,7 +14,7 @@ export const lineHeightExtension = Extension.create({
     name: "lineHeight",
     addOptions() {
         return {
-            types: ["heading", "paragraph"],
+            types: ["paragraph", "heading"],
             defaultLineHeight: "normal",
         }
     },
@@ -31,7 +32,7 @@ export const lineHeightExtension = Extension.create({
                             }
                         },
                         parseHTML: element => {
-                            return element.style.lineHeight || this.options.defaultLineHeight
+                            return element.style.lineHeight || this.options.defaultLineHeight;
                         }
                     }
                 }
@@ -49,10 +50,10 @@ export const lineHeightExtension = Extension.create({
                         tr = tr.setNodeMarkup(pos, undefined, {
                             ...node.attrs,
                             lineHeight,
-                        })
+                        });
                     }
-                })
-                if (dispatch) dispatch(tr)
+                });
+                if (dispatch) dispatch(tr);
                 return true;
             },
             unsetLineHeight: () => ({ tr, state, dispatch }) => {
@@ -66,11 +67,10 @@ export const lineHeightExtension = Extension.create({
                             lineHeight: this.options.defaultLineHeight
                         })
                     }
-                })
-                if (dispatch) dispatch(tr)
+                });
+                if (dispatch) dispatch(tr);
                 return true;
             }
         }
     },
 });
-
