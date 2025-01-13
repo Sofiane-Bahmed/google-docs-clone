@@ -26,7 +26,7 @@ import { ImageButton } from "./components/Image-button";
 import { AlignButton } from "./components/Align-button";
 import { ListButton } from "./components/List-button";
 import { FontSizeButton } from "./components/Font-size-button";
-import { LineHeightButton } from "./components/Line-height-button";
+import { LineHeightButton } from "./components/line-height-button";
 
 interface ToolBarButtonProps {
     onClick?: () => void;
