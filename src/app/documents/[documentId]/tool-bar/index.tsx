@@ -17,15 +17,15 @@ import {
 import { useEditorStore } from "@/store/use-editor-store";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-import { FontFamilyButton } from "./components/FontFamily-button";
-import { HeadingLevelButton } from "./components/Heading-level-button";
-import { TextColorButton } from "./components/Text-color-button";
-import { HighlightColorButton } from "./components/Highlight-color-button";
-import { LinkButton } from "./components/Link-button";
-import { ImageButton } from "./components/Image-button";
-import { AlignButton } from "./components/Align-button";
-import { ListButton } from "./components/List-button";
-import { FontSizeButton } from "./components/Font-size-button";
+import { FontFamilyButton } from "./components/fontFamily-button";
+import { HeadingLevelButton } from "./components/heading-level-button";
+import { TextColorButton } from "./components/text-color-button";
+import { HighlightColorButton } from "./components/highlight-color-button";
+import { LinkButton } from "./components/link-button";
+import { ImageButton } from "./components/image-button";
+import { AlignButton } from "./components/align-button";
+import { ListButton } from "./components/list-button";
+import { FontSizeButton } from "./components/font-size-button";
 import { LineHeightButton } from "./components/line-height-button";
 
 interface ToolBarButtonProps {
@@ -55,7 +55,7 @@ const ToolBarButton = ({
 export const ToolBar = () => {
 
     const { editor } = useEditorStore();
-    console.log(editor)
+
     const sections: {
         label: string;
         icon: LucideIcon;

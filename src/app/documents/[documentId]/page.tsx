@@ -1,6 +1,6 @@
-import { Editor } from "./Editor"
-import { Navbar } from "./navbar/Navbar"
-import { ToolBar } from "./tool-bar/ToolBar"
+import { Editor } from "./editor"
+import { Navbar } from "./navbar"
+import { ToolBar } from "./tool-bar"
 
 interface DocumentIdPageProps {
     params: Promise<{ documentId: string }>

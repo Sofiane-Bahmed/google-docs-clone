@@ -21,7 +21,7 @@ import ImageResize from "tiptap-extension-resize-image"
 import { useEditorStore } from '@/store/use-editor-store'
 import { FontSizeExtension } from "@/extensions/font-size"
 import { lineHeightExtension } from '@/extensions/line-height'
-import { Ruler } from "./ruler/Ruler"
+import { Ruler } from "./ruler"
 
 export const Editor = () => {
   const { setEditor } = useEditorStore()

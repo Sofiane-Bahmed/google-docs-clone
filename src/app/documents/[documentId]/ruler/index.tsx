@@ -1,7 +1,7 @@
 
 import { useRef, useState } from "react";
 
-import { Marker } from "./Marker"
+import { Marker } from "./marker"
 
 const markers = Array.from({ length: 83 }, (_, i) => i);
 
