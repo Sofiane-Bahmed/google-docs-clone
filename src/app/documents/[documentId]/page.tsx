@@ -1,5 +1,5 @@
 import { Editor } from "./editor"
-import { Navbar } from "./navbar/navbar"
+import { Navbar } from "./navbar"
 import { ToolBar } from "./tool-bar"
 
 interface DocumentIdPageProps {
