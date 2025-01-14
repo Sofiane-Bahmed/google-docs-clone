@@ -34,7 +34,6 @@ import {
 } from "@/components/ui/menubar";
 import { useEditorStore } from "@/store/use-editor-store";
 
-
 export const MenuBar = () => {
     const { editor } = useEditorStore();
 
