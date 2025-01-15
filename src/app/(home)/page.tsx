@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import { Navbar } from './components/navbar'
+import { TemplatesGallery } from './components/templates-gallery'
 
 const Home = async ({
   params,
@@ -16,7 +17,7 @@ const Home = async ({
         <Navbar />
       </div>
       <div className='mt-16'>
-        Go to <Link className='text-blue-600 underline px-1' href={`/documents/${id}`}>DocumentId</Link> page
+        <TemplatesGallery />
       </div>
     </div>
   )
