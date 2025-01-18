@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { format } from "date-fns"
 import { SiGoogledocs } from 'react-icons/si'
 import { Building2Icon, CircleUserIcon } from 'lucide-react';
@@ -12,13 +13,17 @@ interface DocumentRowProps {
 }
 
 export const DocumentRow = ({ document }: DocumentRowProps) => {
+    const router = useRouter();
 
     const onNewTabClick = (id: string) => {
         window.open(`/documents/${id}`, "_blank")
-    }
+    };
 
     return (
-        <TableRow className="cursor-pointer">
+        <TableRow
+            className="cursor-pointer"
+            onClick={() => router.push(`/documents/${document._id}`)}
+        >
             <TableCell className=" w-[50px]">
                 <SiGoogledocs className='size-6 fill-blue-500' />
             </TableCell>
