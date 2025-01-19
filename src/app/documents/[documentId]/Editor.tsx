@@ -1,5 +1,6 @@
 "use client"
 
+import { useLiveblocksExtension } from "@liveblocks/react-tiptap";
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import FontFamily from '@tiptap/extension-font-family'
@@ -18,13 +19,16 @@ import TableRow from '@tiptap/extension-table-row'
 import Image from '@tiptap/extension-image'
 import ImageResize from "tiptap-extension-resize-image"
 
+
 import { useEditorStore } from '@/store/use-editor-store'
 import { FontSizeExtension } from "@/extensions/font-size"
 import { lineHeightExtension } from '@/extensions/line-height'
 import { Ruler } from "./ruler"
+import { Threads } from "./threads";
 
 export const Editor = () => {
-  const { setEditor } = useEditorStore()
+  const liveBlocks = useLiveblocksExtension();
+  const { setEditor } = useEditorStore();
   const editor = useEditor({
     immediatelyRender: false,
     onCreate({ editor }) {
@@ -58,7 +62,7 @@ export const Editor = () => {
       }
     },
     extensions: [
-      StarterKit,
+      liveBlocks,
       FontSizeExtension,
       FontFamily,
       Color,
@@ -70,6 +74,9 @@ export const Editor = () => {
       TableRow,
       TableHeader,
       TableCell,
+      StarterKit.configure({
+        history: false,
+      }),
       lineHeightExtension.configure({
         types: ["heading", "paragraph"],
         defaultLineHeight: "normal"
@@ -99,6 +106,7 @@ export const Editor = () => {
       <Ruler />
       <div className='min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0'>
         <EditorContent editor={editor} />
+        <Threads editor={editor} />
       </div>
     </div>
   )
