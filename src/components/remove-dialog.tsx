@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react";
+import { toast } from "sonner"
 import { useMutation } from "convex/react";
 
 import {
@@ -15,7 +17,6 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Id } from "../../convex/_generated/dataModel"
 import { api } from "../../convex/_generated/api";
-import { useState } from "react";
 
 interface RemoveDialogProps {
     documentId: Id<"documents">;
@@ -51,6 +52,8 @@ export const RemoveDialog = ({
                             e.stopPropagation();
                             setIsRemoving(true);
                             remove({ id: documentId })
+                                .catch(() => toast.error("Admin action only"))
+                                .then(() => toast.success("Document removed"))
                                 .finally(() => setIsRemoving(false));
                         }}
                     >

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import { toast } from "sonner";
 import { useMutation } from "convex/react";
 
 import {
@@ -39,6 +40,8 @@ export const RenameDialog = ({
         setIsUpdating(true);
 
         update({ id: documentId, title: title.trim() || "Untitled" })
+            .catch(() => toast.error("Admin action only"))
+            .then(() => toast.success("Document renamed"))
             .finally(() => {
                 setIsUpdating(false);
                 setOpen(false);
