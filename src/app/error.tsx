@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { AlertTriangleIcon } from "lucide-react"
@@ -11,7 +11,8 @@ const ErrorPage = ({
 }: {
     error: Error & { digest?: string };
     reset: () => void
-}) => {
+}
+) => {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center space-y-6">
             <div className="text-center space-y-4 ">
@@ -29,7 +30,7 @@ const ErrorPage = ({
                     </p>
                 </div>
             </div>
-            <div className="flex items-center gap-x-3 ">
+            <div className="flex items-center gap-x-3">
                 <Button
                     onClick={reset}
                     className="font-medium px-6 "
@@ -49,3 +50,5 @@ const ErrorPage = ({
         </div>
     )
 }
+
+export default ErrorPage;

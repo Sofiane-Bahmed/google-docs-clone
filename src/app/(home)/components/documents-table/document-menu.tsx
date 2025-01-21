@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { RemoveDialog } from "@/components/remove-dialog";
 import { RenameDialog } from "@/components/rename-dialog";
+
 import { Id } from "../../../../../convex/_generated/dataModel";
 
 interface DocumentMenuProps {
@@ -40,9 +41,9 @@ export const DocumentMenu = ({
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <RenameDialog
-                 documentId={documentId}
-                 initialTitle={title}
-                 >
+                    documentId={documentId}
+                    initialTitle={title}
+                >
                     <DropdownMenuItem
                         onSelect={(e) => e.preventDefault()}
                         onClick={(e) => e.stopPropagation()}
