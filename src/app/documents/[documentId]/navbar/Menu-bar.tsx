@@ -33,8 +33,13 @@ import {
     MenubarTrigger,
 } from "@/components/ui/menubar";
 import { useEditorStore } from "@/store/use-editor-store";
+import { Doc } from "../../../../../convex/_generated/dataModel";
 
-export const MenuBar = () => {
+interface MenuBarProps {
+    data: Doc<"documents">;
+}
+
+export const MenuBar = ({ data }: MenuBarProps) => {
     const { editor } = useEditorStore();
 
     const insertTable = ({ rows, cols }: { rows: number, cols: number }) => {
@@ -60,7 +65,7 @@ export const MenuBar = () => {
         const blob = new Blob([JSON.stringify(content)], {
             type: "application/json",
         });
-        onDownoald(blob, `document.json`) //TODO: use document name
+        onDownoald(blob, `${data.title}.json`)
     };
 
     const onSaveHTML = () => {
@@ -70,7 +75,7 @@ export const MenuBar = () => {
         const blob = new Blob([content], {
             type: "text/html",
         });
-        onDownoald(blob, `document.html`) //TODO: use document name
+        onDownoald(blob, `${data.title}.html`)
     };
     const onSaveText = () => {
         if (!editor) return;
@@ -79,7 +84,7 @@ export const MenuBar = () => {
         const blob = new Blob([content], {
             type: "text/plain",
         });
-        onDownoald(blob, `document.txt`) //TODO: use document name
+        onDownoald(blob, `${data.title}.txt`)
     };
 
     return (
