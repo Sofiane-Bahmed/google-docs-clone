@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
     ChevronDownIcon,
-    Icon,
     ListIcon,
     ListOrderedIcon,
 } from "lucide-react";

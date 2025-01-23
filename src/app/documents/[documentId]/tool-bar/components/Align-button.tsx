@@ -13,7 +13,6 @@ import {
     AlignLeftIcon,
     AlignRightIcon,
     ChevronDownIcon,
-    Icon,
 } from "lucide-react";
 
 export const AlignButton = () => {

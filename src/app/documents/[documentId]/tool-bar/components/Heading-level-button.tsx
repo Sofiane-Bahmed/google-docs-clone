@@ -11,13 +11,14 @@ import { cn } from "@/lib/utils";
 
 export const HeadingLevelButton = () => {
     const { editor } = useEditorStore()
+
     const headings = [
-        { label: "Normal text", value: 0, fontSize: "16px" },
-        { label: "Heading 1", value: 1, fontSize: "32px" },
-        { label: "Heading 2", value: 2, fontSize: "24px" },
-        { label: "Heading 3", value: 3, fontSize: "20px" },
-        { label: "Heading 4", value: 4, fontSize: "18px" },
-        { label: "Heading 5", value: 5, fontSize: "16px" }
+        { label: "Normal text", value: 0 as const, fontSize: "16px" },
+        { label: "Heading 1", value: 1 as const, fontSize: "32px" },
+        { label: "Heading 2", value: 2 as const, fontSize: "24px" },
+        { label: "Heading 3", value: 3 as const, fontSize: "20px" },
+        { label: "Heading 4", value: 4 as const, fontSize: "18px" },
+        { label: "Heading 5", value: 5 as const, fontSize: "16px" }
     ];
 
     const getCurrentHeading = () => {

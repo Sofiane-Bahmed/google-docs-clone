@@ -1,7 +1,12 @@
 "use client";
 
-import { ReactNode, useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import {
+    ReactNode,
+    useEffect,
+    useMemo,
+    useState
+} from "react";
 import {
     LiveblocksProvider,
     RoomProvider,
@@ -49,7 +54,7 @@ export function Room({ children }: { children: ReactNode }) {
             throttle={16}
             authEndpoint={async () => {
                 const endpoint = "/api/liveblocks-auth";
-                const room = params.documentId as String;
+                const room = params.documentId as string;
 
                 const response = await fetch(endpoint, {
                     method: "POST",

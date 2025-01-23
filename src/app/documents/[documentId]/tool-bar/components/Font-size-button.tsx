@@ -41,7 +41,7 @@ export const FontSizeButton = () => {
         if (e.key === "Enter") {
             e.preventDefault();
             updateFontSize(inputvalue)
-            editor?.command.focus();
+            editor?.commands.focus();
         }
     };
 

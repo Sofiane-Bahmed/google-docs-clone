@@ -1,6 +1,9 @@
 "use client"
 
-import { type ColorResult, CirclePicker, SketchPicker } from "react-color"
+import {
+    type ColorResult,
+    SketchPicker
+} from "react-color"
 
 import { useEditorStore } from '@/store/use-editor-store'
 import {
@@ -8,7 +11,6 @@ import {
     DropdownMenuContent,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
 import { HighlighterIcon } from "lucide-react";
 
 export const HighlightColorButton = () => {

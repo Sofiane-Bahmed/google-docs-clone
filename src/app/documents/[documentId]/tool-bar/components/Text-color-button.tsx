@@ -2,7 +2,6 @@
 
 import {
     type ColorResult,
-    CirclePicker,
     SketchPicker
 } from "react-color"
 
