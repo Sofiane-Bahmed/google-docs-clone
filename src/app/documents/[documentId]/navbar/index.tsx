@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image from "next/image";
 import Link from "next/link";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
-import { Preloaded, usePreloadedQuery } from "convex/react"
+import { Preloaded, usePreloadedQuery } from "convex/react";
 
 
 import { DocumentInput } from "./document-input";
@@ -15,7 +15,7 @@ interface NavbarProps {
     data: Doc<"documents">;
     preloadedDocument: Preloaded<typeof api.documents.getById>
 
-}
+};
 
 export const Navbar = ({ data, preloadedDocument }: NavbarProps) => {
     const document = usePreloadedQuery(preloadedDocument);
