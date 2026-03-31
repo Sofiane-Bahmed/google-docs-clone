@@ -24,7 +24,7 @@ export const HeadingLevelButton = () => {
     const getCurrentHeading = () => {
         for (let level = 1; level <= 5; level++) {
             if (editor?.isActive("heading", { level })) {
-                return `heading, ${level}`;
+                return `Heading, ${level}`;
             }
         }
         return "Normal heading"

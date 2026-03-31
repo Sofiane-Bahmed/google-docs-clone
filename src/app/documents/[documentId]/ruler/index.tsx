@@ -97,7 +97,7 @@ export const Ruler = () => {
                     onMouseDown={handleRightMouseDown}
                     onDoubleClick={handleRightDoubleClick}
                 />
-                <div className="absolute inset-x-0 bottom-0 h-full ">
+                <div className="absolute inset-x-0 bottom-0 h-full">
                     <div className="relative h-full w-page">
                         {markers.map((marker) => {
                             const position = (marker * PAGE_WIDTH) / 82;
@@ -105,7 +105,7 @@ export const Ruler = () => {
                             return (
                                 <div
                                     key={marker}
-                                    className="absolute bottom-0 "
+                                    className="absolute bottom-0"
                                     style={{ left: `${position}px` }}
                                 >
                                     {marker % 10 === 0 && (

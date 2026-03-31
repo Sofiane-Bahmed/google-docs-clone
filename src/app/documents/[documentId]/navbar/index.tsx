@@ -3,7 +3,6 @@ import Link from "next/link";
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 import { Preloaded, usePreloadedQuery } from "convex/react";
 
-
 import { DocumentInput } from "./document-input";
 import { MenuBar } from "./menu-bar";
 import { Avatars } from "../avatars";
